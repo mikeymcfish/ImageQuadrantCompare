@@ -1,0 +1,122 @@
+.comparison-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    background-color: var(--bs-dark);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: clip-path 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    transform-origin: center;
+}
+
+.image-layer:nth-child(1) {
+    clip-path: polygon(0 0, var(--clip-x) 0, var(--clip-x) var(--clip-y), 0 var(--clip-y));
+}
+
+.image-layer:nth-child(2) {
+    clip-path: polygon(var(--clip-x) 0, 100% 0, 100% var(--clip-y), var(--clip-x) var(--clip-y));
+}
+
+.image-layer:nth-child(3) {
+    clip-path: polygon(0 var(--clip-y), var(--clip-x) var(--clip-y), var(--clip-x) 100%, 0 100%);
+}
+
+.image-layer:nth-child(4) {
+    clip-path: polygon(var(--clip-x) var(--clip-y), 100% var(--clip-y), 100% 100%, var(--clip-x) 100%);
+}
+
+.mouse-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: move;
+}
+
+.image-credit {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.filename-watermark {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Top-left quadrant */
+.image-layer:nth-child(1) .filename-watermark {
+    top: 10px;
+    left: 10px;
+}
+
+/* Top-right quadrant */
+.image-layer:nth-child(2) .filename-watermark {
+    top: 10px;
+    right: 10px;
+}
+
+/* Bottom-left quadrant */
+.image-layer:nth-child(3) .filename-watermark {
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Bottom-right quadrant */
+.image-layer:nth-child(4) .filename-watermark {
+    bottom: 10px;
+    right: 10px;
+}
+
+.quadrant-indicator {
+    position: absolute;
+    border: 2px solid var(--bs-info);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.drag-area {
+    border: 2px dashed var(--bs-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.drag-area.dragover {
+    border-color: var(--bs-primary);
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+.drag-area .drag-text {
+    color: var(--bs-secondary);
+    margin-bottom: 1rem;
+}
