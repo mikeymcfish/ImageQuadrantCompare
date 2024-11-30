@@ -7,14 +7,14 @@
 - **Drag-and-Drop Interface**: Quickly upload four images for comparison.
 - **Interactive Comparison**: Use the mouse to compare the four images.
 
-<img src="./examples/compare.png>
+<img src="./examples/compare.png">
 
 
 - **Keyboard Navigation**: Use mouse to slide and compare images, or use keyboard controls:
 
-<img src="./examples/instructions.png>
+<img src="./examples/instructions.png">
 
 Hold multiple arrow keys simultaneously to blend images together with equal opacity.
 For example: pressing Up + Right will show both top images blended.
 
-<img src="./examples/overlays.png>
+<img src="./examples/overlays.png">
